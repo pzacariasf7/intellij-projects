@@ -24,3 +24,6 @@ hs_err_pid*
 /employee-api-swagger-codegen/.idea/
 /employee-api-swagger-codegen/*.iml
 /employee-api-swagger-codegen/target/
+/employee-api-swagger-codegen-client/.idea/
+/employee-api-swagger-codegen-client/*.iml
+/employee-api-swagger-codegen-client/target/

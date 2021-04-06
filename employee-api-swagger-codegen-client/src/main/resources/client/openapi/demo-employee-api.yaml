@@ -1,0 +1,110 @@
+openapi: 3.0.0
+info:
+  description: |
+    This is a demo employee API.
+  version: 1.0.0
+  title: Swagger Employee
+  termsOfService: 'http://swagger.io/terms/'
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+servers:
+  - url: /api
+tags:
+  - name: employee
+    description: Everything about your employees
+    externalDocs:
+      description: Find out more
+      url: 'http://swagger.io'
+paths:
+  /employees:
+    get:
+      tags:
+        - employee
+      summary: Finds employees
+      description: Finds employees
+      operationId: findEmployeesUsingGet
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Employee'
+        '400':
+          description: Invalid status value
+  '/employees/{id}':
+    patch:
+      tags:
+        - employee
+      summary: Update employee
+      description: Update employee
+      operationId: updateEmployeesUsingPatch
+      parameters:
+        - $ref: '#/components/parameters/id'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchEmployeeRequest'
+        required: true
+      responses:
+        '204':
+          description: Se actualizó empleado correctamente.
+        '400':
+          description: Invalid status value
+components:
+  parameters:
+    id:
+      name: id
+      in: path
+      description: Identificador del empleado
+      required: true
+      schema:
+        type: string
+        example: '1'
+  schemas:
+    Employee:
+      type: object
+      required:
+        - name
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 1
+        nombre:
+          type: string
+          example: Paul Zacarias Fabian
+        edad:
+          type: integer
+          format: int64
+          example: 30
+        rol:
+          type: string
+          example: Arquitecto
+        padres:
+          type: array
+          items:
+            type: object
+            properties:
+              dni:
+                type: string
+                example: 09215388
+              nombre:
+                type: string
+                example: Elizabeth Fabian Rivera
+              parentesco:
+                type: string
+                example: Madre
+    PatchEmployeeRequest:
+      title: PatchEmployeeRequest
+      type: object
+      required:
+        - nombre
+      properties:
+        nombre:
+          type: string
+          example: Paul Zacarias Fabian
