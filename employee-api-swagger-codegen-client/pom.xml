@@ -80,6 +80,11 @@
             <artifactId>swagger-annotations</artifactId>
             <version>1.5.20</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.joschi.jackson</groupId>
+            <artifactId>jackson-datatype-threetenbp</artifactId>
+            <version>2.6.4</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -102,9 +107,10 @@
                             <language>java</language>
                             <library>resttemplate</library>
                             <output>${project.build.directory}/generated-sources</output>
-                            <generateSupportingFiles>false</generateSupportingFiles>
+                            <generateSupportingFiles>true</generateSupportingFiles>
                             <apiPackage>com.paul.employee.proxy.api</apiPackage>
                             <modelPackage>com.paul.employee.proxy.models</modelPackage>
+                            <invokerPackage>com.paul.employee.proxy.invoker</invokerPackage>
                             <configOptions>
                                 <interfaceOnly>true</interfaceOnly>
                             </configOptions>
