@@ -111,6 +111,7 @@
                             <apiPackage>com.paul.employee.proxy.api</apiPackage>
                             <modelPackage>com.paul.employee.proxy.models</modelPackage>
                             <invokerPackage>com.paul.employee.proxy.invoker</invokerPackage>
+                            <generateApiTests>false</generateApiTests>
                             <configOptions>
                                 <interfaceOnly>true</interfaceOnly>
                             </configOptions>
