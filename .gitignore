@@ -27,3 +27,9 @@ hs_err_pid*
 /employee-api-swagger-codegen-client/.idea/
 /employee-api-swagger-codegen-client/*.iml
 /employee-api-swagger-codegen-client/target/
+/spring-kafka/.idea/
+/spring-kafka/*.iml
+/spring-kafka/target/
+/itextpdf-demo/.idea/
+/itextpdf-demo/*.iml
+/itextpdf-demo/target/
