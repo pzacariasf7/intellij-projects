@@ -33,3 +33,4 @@ hs_err_pid*
 /itextpdf-demo/.idea/
 /itextpdf-demo/*.iml
 /itextpdf-demo/target/
+/DocumentDB-Quickstart-Java/
